@@ -7,7 +7,7 @@ Aplicação estática para gestão local de clientes, orçamentos, agenda, orden
 1. Abra esta pasta no VS Code.
 2. Abra `index.html`.
 3. Clique com o botão direito e escolha **Open with Live Server**.
-4. Acesse com usuário `admin` e senha `admin`.
+4. Acesse com usuário `*****` e senha `*****`.
 
 Não é necessário instalar dependências, executar `npm`, configurar banco de dados ou iniciar backend.
 

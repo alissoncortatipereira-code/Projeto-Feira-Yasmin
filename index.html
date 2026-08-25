@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,13 +11,15 @@
   <link rel="stylesheet" href="sidebar.css">
   <link rel="stylesheet" href="theme.css">
 </head>
+
 <body>
   <div id="login" class="login-screen">
-    <form id="login-form" class="login-card">
-      <div class="brand-mark"><img src="logo-mark.svg" alt="Logo RS Instalações Elétricas"></div><h1>RS Instalações Elétricas</h1>
+    <form id="login-form" class="login-card" autocomplete="off">
+      <div class="brand-mark"><img src="logo-mark.svg" alt="Logo RS Instalações Elétricas"></div>
+      <h1>RS Instalações Elétricas</h1>
       <p>Gestão operacional e financeira</p>
-      <label>Usuário<input name="user" required autocomplete="username" value="admin"></label>
-      <label>Senha<input name="password" type="password" required autocomplete="current-password" value="admin"></label>
+      <label>Usuário<input name="user" required autocomplete="off"></label>
+      <label>Senha<input name="password" type="password" required autocomplete="new-password"></label>
       <button class="btn primary" type="submit">Entrar</button>
       <small>Acesso local demonstrativo. Não use credenciais reais.</small>
     </form>
@@ -29,14 +32,42 @@
       <button id="logout" class="side-action">↪ <span>Sair</span></button>
     </aside>
     <div class="shell">
-      <header><button id="menu" class="icon-btn header-control" title="Abrir ou recolher menu" aria-label="Abrir ou recolher menu">☰</button><div class="page-heading"><h1 id="page-title"></h1><small id="today"></small></div><div class="global"><span class="search-icon">⌕</span><input id="global-search" placeholder="Buscar em todo o sistema…" aria-label="Pesquisa global"><div id="search-results"></div></div><button id="theme-toggle" class="icon-btn header-control theme-toggle" title="Alternar modo escuro" aria-label="Alternar modo escuro"><span class="theme-icon">☾</span></button></header>
+      <header><button id="menu" class="icon-btn header-control" title="Abrir ou recolher menu"
+          aria-label="Abrir ou recolher menu">☰</button>
+        <div class="page-heading">
+          <h1 id="page-title"></h1><small id="today"></small>
+        </div>
+        <div class="ai-status" title="Os dados são gravados automaticamente neste navegador"><i></i><span
+            id="save-status">Dados salvos</span></div>
+        <div class="global"><span class="search-icon">⌕</span><input id="global-search"
+            placeholder="Buscar em todo o sistema…" aria-label="Pesquisa global">
+          <div id="search-results"></div>
+        </div><button id="theme-toggle" class="icon-btn header-control theme-toggle" title="Alternar modo escuro"
+          aria-label="Alternar modo escuro"><span class="theme-icon">☾</span></button>
+      </header>
       <main id="content"></main>
     </div>
   </div>
-  <div id="modal" class="modal hidden"><div class="modal-card"><div class="modal-head"><h2 id="modal-title"></h2><button id="modal-close" class="icon-btn">×</button></div><div id="modal-body"></div></div></div>
-  <div id="confirm" class="modal hidden"><div class="confirm-card"><h3>Confirmar ação</h3><p id="confirm-text"></p><div class="actions"><button id="confirm-no" class="btn">Cancelar</button><button id="confirm-yes" class="btn danger">Confirmar</button></div></div></div>
-  <div id="toasts"></div><div id="loading" class="loading hidden">Carregando…</div>
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2 id="modal-title"></h2><button id="modal-close" class="icon-btn">×</button>
+      </div>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+  <div id="confirm" class="modal hidden">
+    <div class="confirm-card">
+      <h3>Confirmar ação</h3>
+      <p id="confirm-text"></p>
+      <div class="actions"><button id="confirm-no" class="btn">Cancelar</button><button id="confirm-yes"
+          class="btn danger">Confirmar</button></div>
+    </div>
+  </div>
+  <div id="toasts"></div>
+  <div id="loading" class="loading hidden">Carregando…</div>
   <input id="import-file" type="file" accept="application/json" hidden>
   <script type="module" src="app.js"></script>
 </body>
+
 </html>

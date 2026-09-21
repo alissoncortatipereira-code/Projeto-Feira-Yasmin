@@ -1,3 +1,3 @@
-export const SUPABASE_URL = 'https://ieewktazakjfbualydol.supabase.co';
-export const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_OTlwr_WHFpDn6MnHwgdCng_xyYgI0GC';
-
+export const SUPABASE_URL = 'https://bacyckaruzeswgyhvyry.supabase.co';
+export const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_yfnjCi3et7gWaRDw5yXd6A_cZ0o78MT';
+//USUARIO: admin SENHA:admin

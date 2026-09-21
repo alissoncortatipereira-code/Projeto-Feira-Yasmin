@@ -36,6 +36,7 @@ textarea {
 .hidden {
   display: none !important;
 }
+
 .login-screen {
   min-height: 100vh;
   display: grid;
@@ -73,7 +74,9 @@ textarea {
   margin: 10px 0;
 }
 .brand-mark {
-  font-size: 38px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
 }
 .app {
   display: flex;

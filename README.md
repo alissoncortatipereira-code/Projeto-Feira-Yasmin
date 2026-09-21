@@ -14,6 +14,25 @@ Aplicação web para gestão de clientes, orçamentos, equipe, estoque, ordens d
 - Tema claro e escuro.
 - Sincronização automática com o Supabase.
 
+## Configurar o Supabase
+
+Antes de usar a sincronização pela primeira vez:
+
+1. Acesse o painel do projeto no Supabase.
+2. Abra **SQL Editor**.
+3. Copie todo o conteúdo de `supabase-schema.sql`.
+4. Cole no editor e clique em **Run**.
+
+Esse script cria a tabela `app_state`, ativa o Row Level Security (RLS) e configura as políticas necessárias para a chave pública utilizada pelo site.
+
+As informações de conexão ficam em `supabase-config.js`:
+
+```js
+export const SUPABASE_URL = 'https://seu-projeto.supabase.co';
+export const SUPABASE_PUBLISHABLE_KEY = 'sua-chave-publica';
+```
+
+Use somente uma chave `publishable` ou `anon` no navegador. Nunca coloque uma chave `service_role` ou `secret` nesse arquivo.
 
 ## Executar com Live Server
 

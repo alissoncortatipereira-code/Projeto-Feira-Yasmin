@@ -1,4 +1,5 @@
--- Execute este arquivo no SQL Editor do painel do Supabase uma única vez.
+-- Execute este arquivo no SQL Editor do painel do Supabase.
+-- O sistema usa um único estado compartilhado entre todos os dispositivos.
 create table if not exists public.app_state (
   id bigint primary key,
   data jsonb not null default '{}'::jsonb,
@@ -13,7 +14,7 @@ drop policy if exists "app_state_update_publishable" on public.app_state;
 drop policy if exists "app_state_delete_publishable" on public.app_state;
 
 create policy "app_state_select_publishable" on public.app_state
-  for select to anon using (true);
+  for select to anon using (id = 1);
 create policy "app_state_insert_publishable" on public.app_state
   for insert to anon with check (id = 1);
 create policy "app_state_update_publishable" on public.app_state
@@ -22,4 +23,3 @@ create policy "app_state_delete_publishable" on public.app_state
   for delete to anon using (id = 1);
 
 grant select, insert, update, delete on public.app_state to anon;
-

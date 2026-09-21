@@ -7,6 +7,7 @@ async function request(table, { method = 'GET', query = '', body, prefer } = {})
     method,
     headers: {
       apikey: SUPABASE_PUBLISHABLE_KEY,
+      Authorization: `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
       'Content-Type': 'application/json',
       ...(prefer ? { Prefer: prefer } : {})
     },
@@ -20,7 +21,12 @@ async function request(table, { method = 'GET', query = '', body, prefer } = {})
 
   if (response.status === 204) return null;
   const text = await response.text();
-  return text ? JSON.parse(text) : null;
+  if (!text) return null;
+  try {
+    return JSON.parse(text);
+  } catch {
+    throw new Error('O Supabase retornou uma resposta inválida.');
+  }
 }
 
 const encodeFilters = filters => Object.entries(filters)
@@ -82,4 +88,3 @@ export const SupabaseStorage = {
     return SupabaseDB.excluir('app_state', { id: 1 });
   }
 };
-
